@@ -3,7 +3,7 @@
     import axios from 'axios';  
     import { useFocus} from "svelte-navigator";
     //import { getArgonauteById } from "../api/api";
-
+    import Button from '../components/Button.svelte';
 	const registerFocus = useFocus();
     export let argonaute = {}
     let error = null;
@@ -33,7 +33,9 @@ onMount(async () =>{
      <h2>{argonaute.name}</h2>
      <h2>{argonaute.description}</h2>
 
-     <p on:click={suprim}>Suprimer</p>
+    <!--  <p on:click={suprim}>Suprimer</p> -->
+    <Button type= "submit" on:click={suprim}>Supprimer</Button>
+
    {:catch error}
    <p>An error occurred!</p>
    {/await}
