@@ -35,19 +35,55 @@ const clickLink = async (event) => {
 
 </script>
 
-<main>
+<main class="container">
     {#await argonautes}
         <p>Wait</p>
     {:then}
     {#each argonautes as argonaute} 
-        <h2>{argonaute.name}</h2>
-       <!--  <p>{argonaute.description}</p> -->
+        <div class="card">
+            <h2>{argonaute.name}</h2>
+       
 
-        <a use:registerFocus href={`/all/${argonaute._id}`}
-        on:click|preventDefault= {clickLink}>Qui suis-je?</a>
-        <hr>
+            <a class="qui" use:registerFocus href={`/all/${argonaute._id}`}
+            on:click|preventDefault= {clickLink}>Qui suis-je?</a>
+    </div>
    {/each}
    {:catch error}
    <p>An error occurred!</p>
    {/await}
 </main>
+
+<style>
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        color: #2E445A;
+        padding: 4rem;
+        background-color: #BDB0A1;
+        margin-top: 2rem;
+        box-shadow: 5px 5px 5px #2E445A;
+        border-radius: 5px;
+        text-align: center;
+
+    }
+    .card:hover{
+        box-shadow: 10px 10px 10px #2E445A;
+
+    }
+    .qui{
+        background-color: #2E445A;
+        padding: 1rem;
+        color: #BDB0A1;
+        border-radius: 5px;
+        margin: 1rem;
+        text-decoration: none;
+    }
+    .qui:hover{
+        border: solid 1px #2E445A;
+        background-color: #BDB0A1;
+        color: #2E445A;
+    }
+
+</style>
