@@ -8,7 +8,7 @@
    
 
 	const registerFocus = useFocus();
-    export let argonautes = [];
+    let argonautes = [];
     let error = null; 
 
    /*  const fetchArgonautes = (async () => {
@@ -39,7 +39,7 @@ const clickLink = async (event) => {
     {#await argonautes}
         <p>Wait</p>
     {:then}
-    {#each argonautes as argonaute(argonaute._id)} 
+    {#each argonautes as argonaute} 
         <h2>{argonaute.name}</h2>
        <!--  <p>{argonaute.description}</p> -->
 

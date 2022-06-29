@@ -10,7 +10,7 @@
 
 <div>
 	{#if label}
-		<label class="iroco-ui-label" for={id}>{label}</label>
+		<label class="myLabel" for={id}>{label}</label>
 	{/if}
 	<input
 		on:input
